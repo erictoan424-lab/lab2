@@ -20,7 +20,7 @@ namespace Lab2Modul
             return studenter.Find(s => s.Id == studentId);
         }
 
-        public Student? HittaStudentViaEpost(string epost)
+        public Student HittaStudentViaEpost(string epost)
         {
             return studenter.FirstOrDefault(s => s.Epost == epost);
         }
