@@ -13,8 +13,9 @@ using Lab2Modul;
 namespace Lab2GIU
 {
     public partial class Form1 : Form
-    {
+    { 
         private StudentRegister studentRegister = new StudentRegister();
+        private AnnonsRegister annonsRegister = new AnnonsRegister();
         private List<Administratör> administratör = new List<Administratör>();
         private InloggningsService inloggningsService;
 
@@ -33,7 +34,12 @@ namespace Lab2GIU
 
             if (lyckades)
             {
-                MessageBox.Show("Din inloggning lyckades");
+                Student student = studentRegister.HittaStudentViaEpost(epost);
+
+                StudentForm studentForm = new StudentForm(student, annonsRegister);
+                studentForm.Show();
+
+                this.Hide();
             }
             else
             {
@@ -42,6 +48,81 @@ namespace Lab2GIU
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            string Förnamn = textBox1.Text.Trim();
+            string Efternamn = textBox2.Text.Trim();
+            string Telefonnummer = textBox3.Text.Trim();
+            string epost = txtEpost.Text.Trim();
+            string lösenord = txtLosenord.Text;
+
+            if (string.IsNullOrWhiteSpace(Förnamn) ||
+                string.IsNullOrWhiteSpace(Efternamn) ||
+                string.IsNullOrWhiteSpace(Telefonnummer) ||
+                string.IsNullOrWhiteSpace(epost) ||
+                string.IsNullOrWhiteSpace(lösenord))
+            {
+                MessageBox.Show(
+                    "Fyll i förnamn, efternamn, e-post och lösenord för att registrera dig.");
+                return;
+            }
+
+            if (studentRegister.FinnsEpost(epost))
+            {
+                MessageBox.Show("Den här e-postadressen är redan registrerad!");
+                return;
+            }
+
+            Student nyStudent = new Student(
+                studentRegister.NästaId(),
+                Förnamn, Efternamn, epost, Telefonnummer, lösenord);
+
+            studentRegister.LäggTill(nyStudent);
+            studentRegister.SparaTillFil();
+
+            MessageBox.Show(
+                "Registreringen lyckades.");
+
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            txtEpost.Clear();
+            txtLosenord.Clear();
+
+        }
+
+       
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLosenord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEpost_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
