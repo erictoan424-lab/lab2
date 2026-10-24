@@ -24,5 +24,14 @@ namespace Lab2Modul
         {
             return annonser.Find(a => a.Id == annonsId);
         }
-    }
+        public int NästaId()
+        {
+            if (annonser.Count == 0)
+            {
+                return 1;
+            }
+
+            return annonser.Max(a => a.Id) + 1;
+        }
+    }   
 }

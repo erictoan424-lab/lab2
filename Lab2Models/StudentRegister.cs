@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,31 @@ namespace Lab2Modul
         public Student HittaStudentViaEpost(string epost)
         {
             return studenter.FirstOrDefault(s => s.Epost == epost);
+        }
+        public int NästaId()
+        {
+            if (studenter.Count == 0)
+            {
+                return 1;
+            }
+
+            return studenter.Max(s => s.Id) + 1;
+        }
+
+        public bool FinnsEpost(string epost)
+        {
+            return HittaStudentViaEpost(epost) != null;
+        }
+        public void SparaTillFil()
+        {
+            using (StreamWriter writer = new StreamWriter("studenter.txt", true))
+            {
+                Student student = studenter[studenter.Count - 1];
+
+                writer.WriteLine(
+                    $"{student.Id};{student.Förnamn};{student.Efternamn};" +
+                    $"{student.Epost};{student.Telefonnummer};{student.Lösenord}");
+            }
         }
     }
 }
