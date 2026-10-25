@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,15 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adminstratör.cs" />
+    <Compile Include="AdminstratörRegister.cs" />
     <Compile Include="Affär.cs" />
     <Compile Include="AffärStatus.cs" />
     <Compile Include="Annons.cs" />
     <Compile Include="Annonsregister.cs" />
     <Compile Include="AnnonsStatus.cs" />
     <Compile Include="DigitalResurs.cs" />
+    <Compile Include="ExempelData.cs" />
     <Compile Include="Kompendium.cs" />
     <Compile Include="Kurs.cs" />
     <Compile Include="Kursbok.cs" />
+    <Compile Include="KursRegister.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skick.cs" />

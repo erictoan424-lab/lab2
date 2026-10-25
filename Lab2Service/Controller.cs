@@ -64,5 +64,28 @@ namespace Lab2Service
 
             return affär;
         }
+
+        public bool BekräftaKöp(Affär affär)
+        {
+            if (affär == null)
+            {
+                return false;
+            }
+
+            if (affär.Status != AffärStatus.Reserverad)
+            {
+                return false;
+            }
+
+            if (affär.Annons.Status != AnnonsStatus.Reserverad)
+            {
+                return false;
+            }
+
+            affär.Annons.SättStatus(AnnonsStatus.Såld);
+            affär.Status = AffärStatus.Genomförd;
+
+            return true;
+        }
     }
 }

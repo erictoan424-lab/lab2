@@ -15,9 +15,18 @@ namespace Lab2Modul
             annonser.Add(annons);
         }
 
+        public void TaBort(Annons annons)
+        {
+            annonser.Remove(annons);
+        }
+
         public List<Annons> HämtaTillgängligaAnnonser()
         {
             return annonser.FindAll(a => a.ÄrTillSalu());
+        }
+        public List<Annons> HämtaStudentensAnnonser(int studentId)
+        {
+            return annonser.FindAll(a => a.Säljare.Id == studentId);
         }
 
         public Annons HittaAnnons(int annonsId)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lab2Service;
 using Lab2Modul;
+using Lab2Models;
 
 namespace Lab2GIU
 {
@@ -22,6 +23,19 @@ namespace Lab2GIU
         public Form1()
         {
             InitializeComponent();
+
+            ExempelData.FyllStudenter(studentRegister);
+            ExempelData.FyllAnnonser(annonsRegister, studentRegister);
+
+            administratör.Add(new Administratör
+            {
+                Förnamn = "Eric",
+                Efternamn = "Tran",
+                Epost = "Eric@test.se",
+                Telefonnummer = "0701234567",
+                Lösenord = "123"
+            });
+
             inloggningsService = new InloggningsService(studentRegister, administratör);
         }
 
@@ -32,19 +46,30 @@ namespace Lab2GIU
 
             bool lyckades = inloggningsService.LoggaIn(epost, lösenord);
 
-            if (lyckades)
-            {
-                Student student = studentRegister.HittaStudentViaEpost(epost);
-
-                StudentForm studentForm = new StudentForm(student, annonsRegister);
-                studentForm.Show();
-
-                this.Hide();
-            }
-            else
+            if (!lyckades)
             {
                 MessageBox.Show("Fel e-post eller lösenord!");
+                return;
             }
+            Student student = studentRegister.HittaStudentViaEpost(epost);
+
+            if (student != null)
+            {
+                StudentForm studentForm =
+            new StudentForm(student, annonsRegister, studentRegister);
+
+                studentForm.Show();
+                this.Hide();
+                return;
+            }
+            Administratör admin = administratör.Find(a => a.Epost == epost);
+            if (admin != null)
+            {
+                AdminForm adminForm = new AdminForm(annonsRegister);
+                adminForm.Show();
+                this.Hide();
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
