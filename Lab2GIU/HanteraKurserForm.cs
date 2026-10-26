@@ -78,5 +78,51 @@ namespace Lab2GIU
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string kurskod = txtKurskod.Text.Trim();
+            string nyttNamn = txtKursnamn.Text.Trim();
+            if(string.IsNullOrWhiteSpace(kurskod) || 
+                    string.IsNullOrWhiteSpace(nyttNamn))
+
+            {
+                MessageBox.Show("Fyll i kurskod och nytt kursnamn");
+                return;
+            }
+            bool lyckades = kursRegister.ÄndraKurs(kurskod, nyttNamn);
+            if (lyckades)
+            {
+                VisaKurser();
+                MessageBox.Show("Kursen har ändrats");
+            }
+            else
+            {
+                MessageBox.Show("Kursen hittades inte");
+            }
+        }
+
+        private void btnTaBortKurs_Click(object sender, EventArgs e)
+        {
+            string kurskod = txtKurskod.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(kurskod))
+            {
+                MessageBox.Show("Fyll i kurskoden");
+                return;
+            }
+
+            bool lyckades = kursRegister.TaBortKurs(kurskod);
+            if (lyckades)
+            {
+                VisaKurser();
+                txtKurskod.Clear();
+                txtKursnamn.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Kursen hittades inte");
+            }
+        }
     }
 }

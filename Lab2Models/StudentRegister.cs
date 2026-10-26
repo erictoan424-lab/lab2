@@ -39,16 +39,6 @@ namespace Lab2Modul
         {
             return HittaStudentViaEpost(epost) != null;
         }
-        public void SparaTillFil()
-        {
-            using (StreamWriter writer = new StreamWriter("studenter.txt", true))
-            {
-                Student student = studenter[studenter.Count - 1];
-
-                writer.WriteLine(
-                    $"{student.Id};{student.Förnamn};{student.Efternamn};" +
-                    $"{student.Epost};{student.Telefonnummer};{student.Lösenord}");
-            }
+        
         }
     }
-}

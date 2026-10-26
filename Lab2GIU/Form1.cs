@@ -107,7 +107,7 @@ namespace Lab2GIU
                 Förnamn, Efternamn, epost, Telefonnummer, lösenord);
 
             studentRegister.LäggTill(nyStudent);
-            studentRegister.SparaTillFil();
+            
 
             MessageBox.Show(
                 "Registreringen lyckades.");
@@ -158,3 +158,4 @@ namespace Lab2GIU
         }
     }
 }
+    
