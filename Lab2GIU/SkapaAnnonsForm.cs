@@ -1,4 +1,5 @@
-﻿using Lab2Modul;
+﻿using Lab2Models;
+using Lab2Modul;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,21 +16,29 @@ namespace Lab2GIU
     {
         private AnnonsRegister annonsRegister;
         private Student inloggadStudent;
+        private KursRegister kursRegister;
+
 
         public SkapaAnnonsForm(AnnonsRegister annonsRegister,
-            Student inloggadStudent)
+            Student inloggadStudent, KursRegister kursRegister)
 
         {
             InitializeComponent();
 
             this.annonsRegister = annonsRegister;
             this.inloggadStudent = inloggadStudent;
+            this.kursRegister = kursRegister;
 
             cmbSkick.Items.Add("Nyskick");
             cmbSkick.Items.Add("Bra skick");
             cmbSkick.Items.Add("Slitet");
 
             cmbSkick.SelectedIndex = 0;
+
+            foreach (Kurs kurs in kursRegister.HämtaAllaKurser())
+            {
+                cmbKurser.Items.Add(kurs.Kod + " - " + kurs.Namn);
+            }
 
         }
 

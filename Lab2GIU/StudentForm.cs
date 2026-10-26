@@ -1,4 +1,5 @@
-﻿using Lab2Modul;
+﻿using Lab2Models;
+using Lab2Modul;
 using Lab2Service;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,17 @@ namespace Lab2GIU
     {
         private AnnonsRegister annonsRegister;
         private Student inloggadStudent;
+        private KursRegister kursRegister;
         private List<Annons> visadeAnnonser = new List<Annons>();
         private Controller controller;
         private Affär reserveradAffär;
-        public StudentForm(Student inloggadStudent, AnnonsRegister annonsRegister, StudentRegister studentRegister)
+
+        public StudentForm(Student inloggadStudent, AnnonsRegister annonsRegister, StudentRegister studentRegister, KursRegister kursRegister)
         {
             InitializeComponent();
             this.inloggadStudent = inloggadStudent;
             this.annonsRegister = annonsRegister;
+            this.kursRegister = kursRegister;
 
             controller = new Controller(annonsRegister, studentRegister);
 
@@ -75,7 +79,7 @@ namespace Lab2GIU
         private void btnSkapaAnnons_Click(object sender, EventArgs e)
         {
             SkapaAnnonsForm skapaForm =
-        new SkapaAnnonsForm(annonsRegister, inloggadStudent);
+        new SkapaAnnonsForm(annonsRegister, inloggadStudent, kursRegister);
 
             skapaForm.ShowDialog();
             VisaAnnonser();

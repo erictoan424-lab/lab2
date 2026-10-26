@@ -19,10 +19,15 @@ namespace Lab2GIU
         private AnnonsRegister annonsRegister = new AnnonsRegister();
         private List<Administratör> administratör = new List<Administratör>();
         private InloggningsService inloggningsService;
+        private KursRegister kursRegister = new KursRegister();
 
         public Form1()
         {
             InitializeComponent();
+
+            kursRegister.LäggTill(new Kurs("MA100", "Matematik"));
+            kursRegister.LäggTill(new Kurs("PR200", "Programmering"));
+            kursRegister.LäggTill(new Kurs("SV300", "Svenska"));
 
             ExempelData.FyllStudenter(studentRegister);
             ExempelData.FyllAnnonser(annonsRegister, studentRegister);
@@ -56,7 +61,7 @@ namespace Lab2GIU
             if (student != null)
             {
                 StudentForm studentForm =
-            new StudentForm(student, annonsRegister, studentRegister);
+            new StudentForm(student, annonsRegister, studentRegister,kursRegister);
 
                 studentForm.Show();
                 this.Hide();
@@ -65,7 +70,7 @@ namespace Lab2GIU
             Administratör admin = administratör.Find(a => a.Epost == epost);
             if (admin != null)
             {
-                AdminForm adminForm = new AdminForm(annonsRegister);
+                AdminForm adminForm = new AdminForm(annonsRegister,kursRegister);
                 adminForm.Show();
                 this.Hide();
             }

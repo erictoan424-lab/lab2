@@ -40,9 +40,10 @@
             // 
             // btnLäggTillKurs
             // 
-            this.btnLäggTillKurs.Location = new System.Drawing.Point(408, 138);
+            this.btnLäggTillKurs.Location = new System.Drawing.Point(544, 170);
+            this.btnLäggTillKurs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLäggTillKurs.Name = "btnLäggTillKurs";
-            this.btnLäggTillKurs.Size = new System.Drawing.Size(131, 70);
+            this.btnLäggTillKurs.Size = new System.Drawing.Size(175, 86);
             this.btnLäggTillKurs.TabIndex = 0;
             this.btnLäggTillKurs.Text = "Lägg till kurs";
             this.btnLäggTillKurs.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // btnStäng
             // 
-            this.btnStäng.Location = new System.Drawing.Point(408, 359);
+            this.btnStäng.Location = new System.Drawing.Point(544, 442);
+            this.btnStäng.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStäng.Name = "btnStäng";
-            this.btnStäng.Size = new System.Drawing.Size(131, 44);
+            this.btnStäng.Size = new System.Drawing.Size(175, 54);
             this.btnStäng.TabIndex = 1;
             this.btnStäng.Text = "Stäng";
             this.btnStäng.UseVisualStyleBackColor = true;
@@ -61,26 +63,30 @@
             // lstKurser
             // 
             this.lstKurser.FormattingEnabled = true;
-            this.lstKurser.Location = new System.Drawing.Point(82, 214);
+            this.lstKurser.ItemHeight = 16;
+            this.lstKurser.Location = new System.Drawing.Point(109, 263);
+            this.lstKurser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstKurser.Name = "lstKurser";
-            this.lstKurser.Size = new System.Drawing.Size(457, 121);
+            this.lstKurser.Size = new System.Drawing.Size(608, 148);
             this.lstKurser.TabIndex = 2;
             // 
             // txtKursnamn
             // 
-            this.txtKursnamn.Location = new System.Drawing.Point(82, 172);
+            this.txtKursnamn.Location = new System.Drawing.Point(109, 212);
+            this.txtKursnamn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKursnamn.Multiline = true;
             this.txtKursnamn.Name = "txtKursnamn";
-            this.txtKursnamn.Size = new System.Drawing.Size(320, 36);
+            this.txtKursnamn.Size = new System.Drawing.Size(425, 43);
             this.txtKursnamn.TabIndex = 3;
             // 
             // lblHanteraKurser
             // 
             this.lblHanteraKurser.AutoSize = true;
             this.lblHanteraKurser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHanteraKurser.Location = new System.Drawing.Point(116, 9);
+            this.lblHanteraKurser.Location = new System.Drawing.Point(111, 47);
+            this.lblHanteraKurser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHanteraKurser.Name = "lblHanteraKurser";
-            this.lblHanteraKurser.Size = new System.Drawing.Size(198, 31);
+            this.lblHanteraKurser.Size = new System.Drawing.Size(247, 39);
             this.lblHanteraKurser.TabIndex = 4;
             this.lblHanteraKurser.Text = "Hantera Kurser";
             // 
@@ -88,9 +94,10 @@
             // 
             this.lblKurskod.AutoSize = true;
             this.lblKurskod.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKurskod.Location = new System.Drawing.Point(85, 81);
+            this.lblKurskod.Location = new System.Drawing.Point(113, 100);
+            this.lblKurskod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKurskod.Name = "lblKurskod";
-            this.lblKurskod.Size = new System.Drawing.Size(97, 25);
+            this.lblKurskod.Size = new System.Drawing.Size(114, 30);
             this.lblKurskod.TabIndex = 5;
             this.lblKurskod.Text = "Kurskod:";
             // 
@@ -98,26 +105,28 @@
             // 
             this.lblKursnamn.AutoSize = true;
             this.lblKursnamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKursnamn.Location = new System.Drawing.Point(85, 144);
+            this.lblKursnamn.Location = new System.Drawing.Point(113, 177);
+            this.lblKursnamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKursnamn.Name = "lblKursnamn";
-            this.lblKursnamn.Size = new System.Drawing.Size(115, 25);
+            this.lblKursnamn.Size = new System.Drawing.Size(137, 30);
             this.lblKursnamn.TabIndex = 6;
             this.lblKursnamn.Text = "Kursnamn:";
             // 
             // txtKurskod
             // 
-            this.txtKurskod.Location = new System.Drawing.Point(82, 109);
+            this.txtKurskod.Location = new System.Drawing.Point(109, 134);
+            this.txtKurskod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKurskod.Multiline = true;
             this.txtKurskod.Name = "txtKurskod";
-            this.txtKurskod.Size = new System.Drawing.Size(182, 31);
+            this.txtKurskod.Size = new System.Drawing.Size(241, 37);
             this.txtKurskod.TabIndex = 7;
             this.txtKurskod.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // HanteraKurserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.txtKurskod);
             this.Controls.Add(this.lblKursnamn);
             this.Controls.Add(this.lblKurskod);
@@ -126,6 +135,7 @@
             this.Controls.Add(this.lstKurser);
             this.Controls.Add(this.btnStäng);
             this.Controls.Add(this.btnLäggTillKurs);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HanteraKurserForm";
             this.Text = "HanteraKurserForm";
             this.Load += new System.EventHandler(this.HanteraKurserForm_Load);

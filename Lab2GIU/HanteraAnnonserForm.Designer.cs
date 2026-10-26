@@ -37,17 +37,20 @@
             // dgvAnnonser
             // 
             this.dgvAnnonser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnnonser.Location = new System.Drawing.Point(142, 66);
+            this.dgvAnnonser.Location = new System.Drawing.Point(189, 81);
+            this.dgvAnnonser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvAnnonser.Name = "dgvAnnonser";
-            this.dgvAnnonser.Size = new System.Drawing.Size(364, 220);
+            this.dgvAnnonser.RowHeadersWidth = 51;
+            this.dgvAnnonser.Size = new System.Drawing.Size(562, 271);
             this.dgvAnnonser.TabIndex = 0;
             this.dgvAnnonser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgAnnonser_CellContentClick);
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(142, 311);
+            this.btnTaBort.Location = new System.Drawing.Point(189, 383);
+            this.btnTaBort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaBort.Name = "btnTaBort";
-            this.btnTaBort.Size = new System.Drawing.Size(146, 72);
+            this.btnTaBort.Size = new System.Drawing.Size(195, 89);
             this.btnTaBort.TabIndex = 1;
             this.btnTaBort.Text = "Ta bort";
             this.btnTaBort.UseVisualStyleBackColor = true;
@@ -55,9 +58,10 @@
             // 
             // btnStäng
             // 
-            this.btnStäng.Location = new System.Drawing.Point(360, 311);
+            this.btnStäng.Location = new System.Drawing.Point(556, 383);
+            this.btnStäng.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStäng.Name = "btnStäng";
-            this.btnStäng.Size = new System.Drawing.Size(146, 72);
+            this.btnStäng.Size = new System.Drawing.Size(195, 89);
             this.btnStäng.TabIndex = 2;
             this.btnStäng.Text = "Stäng";
             this.btnStäng.UseVisualStyleBackColor = true;
@@ -65,12 +69,13 @@
             // 
             // HanteraAnnonserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnStäng);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.dgvAnnonser);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HanteraAnnonserForm";
             this.Text = "HanteraAnnonserForm";
             this.Load += new System.EventHandler(this.HanteraAnnonserForm_Load);

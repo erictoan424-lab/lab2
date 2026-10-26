@@ -1,4 +1,5 @@
-﻿using Lab2Modul;
+﻿using Lab2Models;
+using Lab2Modul;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,14 @@ namespace Lab2GIU
     public partial class AdminForm : Form
     {
         private AnnonsRegister annonsRegister;
-        public AdminForm(AnnonsRegister annonsRegister)
+        private KursRegister kursRegister;
+        
+
+        public AdminForm(AnnonsRegister annonsRegister, KursRegister kursRegister)
         {
             InitializeComponent();
             this.annonsRegister = annonsRegister;
+            this.kursRegister = kursRegister;
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -40,7 +45,7 @@ namespace Lab2GIU
 
         private void btnHanteraKurser_Click(object sender, EventArgs e)
         {
-            HanteraKurserForm form = new HanteraKurserForm();
+            HanteraKurserForm form = new HanteraKurserForm(kursRegister);
             form.ShowDialog();
         }
     }

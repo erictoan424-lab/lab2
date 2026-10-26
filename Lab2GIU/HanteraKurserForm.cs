@@ -15,10 +15,10 @@ namespace Lab2GIU
     public partial class HanteraKurserForm : Form
     {
         private KursRegister kursRegister;
-        public HanteraKurserForm()
+        public HanteraKurserForm(KursRegister kursRegister)
         {
             InitializeComponent();
-            kursRegister = new KursRegister();
+            this.kursRegister = kursRegister;
             VisaKurser();
         }
         private void VisaKurser()
